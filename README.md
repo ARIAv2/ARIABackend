@@ -1,15 +1,13 @@
 # README
 
-This is the [Express](https://expressjs.com) [Hello world](https://expressjs.com/en/starter/hello-world.html) example on [Render](https://render.com).
+This is the [Express](https://expressjs.com)-based server that the ARIA backend runs on, supported in large part by [Render](https://render.com).
 
-The app in this repo is deployed at [https://express.onrender.com](https://express.onrender.com).
+The app in this repo is deployed [here](https://ariabackend.onrender.com).
 
-## Deployment
+## How this works
 
-See https://render.com/docs/deploy-node-express-app or follow the steps below:
+The main entrypoint is `app.ts`. Upon launch of the server, it does 3 main things:
 
-Create a new web service with the following values:
-  * Build Command: `yarn`
-  * Start Command: `node app.js`
-
-That's it! Your web service will be live on your Render URL as soon as the build finishes.
+- Sets up middleware i.e. CORS for the frontend origin deployed at [https://aria-delta.vercel.app](https://aria-delta.vercel.app)
+- Sets up the routes that the server is reachable at for http requests
+- Keeps the server listening at either port 3001 (by default) or the port stored in render's env file

@@ -4,7 +4,7 @@ import express, { Express } from "express";
 import {
   replyToFrontendGET,
   replyToFrontendPOST,
-} from "./controllers/dataresponse";
+} from "./controllers/dataresponse.js";
 
 function setupMiddleware(app: Express): void {
   app.use(cors({ origin: "https://aria-delta.vercel.app" }));

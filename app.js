@@ -1,7 +1,7 @@
 import bodyParser from "body-parser";
 import cors from "cors";
 import express from "express";
-import { replyToFrontendGET, replyToFrontendPOST, } from "./controllers/dataresponse";
+import { replyToFrontendGET, replyToFrontendPOST, } from "./controllers/dataresponse.js";
 function setupMiddleware(app) {
     app.use(cors({ origin: "https://aria-delta.vercel.app" }));
     app.use(bodyParser.text({ type: "text/plain" }));
@@ -15,6 +15,6 @@ function start() {
     const port = process.env.PORT || 3001;
     setupMiddleware(app);
     setupRoutes(app);
-    app.listen(port, () => console.log(`SERVER STARTED ON https://ariabackend-onrender.com at port ${port}`));
+    app.listen(port, () => console.log(`SERVER STARTED ON https://ariabackend.onrender.com at port ${port}`));
 }
 start();

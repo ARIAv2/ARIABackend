@@ -7,7 +7,7 @@ import {
 } from "./controllers/dataresponse.js";
 
 function setupMiddleware(app: Express): void {
-  app.use(cors({ origin: "https://aria-delta.vercel.app" }));
+  app.use(cors({ origin: "http://localhost:5174" }));
   app.use(bodyParser.text({ type: "text/plain" }));
 }
 

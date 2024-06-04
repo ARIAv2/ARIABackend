@@ -3,7 +3,7 @@ import cors from "cors";
 import express from "express";
 import { replyToFrontendGET, replyToFrontendPOST, } from "./controllers/dataresponse.js";
 function setupMiddleware(app) {
-    app.use(cors({ origin: "http://localhost:5174" }));
+    app.use(cors({ origin: "http://aria-delta.vercel.app" }));
     app.use(bodyParser.text({ type: "text/plain" }));
 }
 function setupRoutes(app) {
